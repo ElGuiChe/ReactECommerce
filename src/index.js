@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import Nav from './components/NavBar';
 import reportWebVitals from './reportWebVitals';
+import ItemListContainer from './components/ItemListContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Nav />
+    <ItemListContainer />
     <App />
   </React.StrictMode>
 );

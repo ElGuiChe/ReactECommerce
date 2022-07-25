@@ -1,4 +1,5 @@
 import React from "react";
+import Cart from "./CartWitget";
 
 const Nav = () => {
   return (
@@ -37,6 +38,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
+        <Cart/>
       </div>
     </nav>
   );
