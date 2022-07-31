@@ -1,8 +1,11 @@
 import React from "react";
+import Contador from "./ItemCount/ItemCount";
 
 const ItemListContainer = () => {
     return (
-      <div>Esto es un texto provisional</div>
+      <div>
+      <Contador />
+      </div>
     )}
   
     export default ItemListContainer;
