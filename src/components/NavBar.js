@@ -38,7 +38,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <Cart/>
+        <Cart />
       </div>
     </nav>
   );
