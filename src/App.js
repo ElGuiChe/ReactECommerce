@@ -1,27 +1,23 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
+import {Routes, Route} from "react-router-dom";
+import Tiendas from "./components/Pages/Tiendas/Tiendas";
+import Contacto from "./components/Pages/Contacto/Contacto"
+import ProductDetail from "./components/ProductDetail/ProductDetail";
+import Producto from "./components/Pages/Producto/Producto"
 
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <ItemListContainer />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Nav/>
+          <Routes>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path="/Tiendas" element={<Tiendas/>}/>
+          <Route path="/Contacto" element={<Contacto/>}/>
+          <Route parh="/Producto" element={<Producto/>}/>
+          <Route path="/Producto/:id" element={<ProductDetail/>}/>
+          </Routes>
     </div>
   );
 }

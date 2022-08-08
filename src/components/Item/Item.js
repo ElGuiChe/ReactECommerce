@@ -1,15 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Contador from "../ItemCount/ItemCount";
 
-function item({ category, id, img, description, price, title }) {
+function Item({ category, id, img, description, price, title }) {
   return (
-    <div class="card" Style="width: 18rem;">
-      <img src={img} class="card-img-top" id={id} alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{title}</h5>
-        <p class="card-text">{description}</p>
-        <a href="#" class="btn btn-primary">
-          Comprar
+    <div className="card" Style="width: 18rem;">
+      <img src={img} className="card-img-top" id={id} alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        
+        <Link to={`/Producto/${id}`} className="btn btn-primary" id={id}>
+          Ver detalle
+        </Link>
+        
+        <a href="#" className="btn btn-primary">
+          Agregar al <i className="bi bi-cart"></i>
         </a>
         <hr />
         <Contador />
@@ -18,4 +23,4 @@ function item({ category, id, img, description, price, title }) {
   );
 }
 
-export default item;
+export default Item;
