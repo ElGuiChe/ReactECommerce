@@ -1,10 +1,12 @@
 //import ProductDetailContainer from "../ProductDetailContainer/ProductDetailContainer";
 
-export default function ProductDetail ({ title }) {
+export default function ProductDetail ({ title , description, image}) {
   console.log(title)
   return (
-      <div>
-          <span>Id: {title} </span>
+      <div className="container">
+        <img src={image}></img>
+          <span>{title} </span>
+          <p>{description}</p>
       </div>
   );
 }
