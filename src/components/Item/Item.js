@@ -16,8 +16,7 @@ function Item({ category, id, img, description, price, title }) {
         <a href="#" className="btn btn-primary">
           Agregar al <i className="bi bi-cart"></i>
         </a>
-        <hr />
-        <Contador />
+
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 //import ProductDetailContainer from "../ProductDetailContainer/ProductDetailContainer";
+import Contador from "../ItemCount/ItemCount";
 
 export default function ProductDetail ({ title , description, image}) {
   console.log(title)
@@ -7,6 +8,8 @@ export default function ProductDetail ({ title , description, image}) {
         <img src={image}></img>
           <span>{title} </span>
           <p>{description}</p>
+          <hr />
+        <Contador />
       </div>
   );
 }
