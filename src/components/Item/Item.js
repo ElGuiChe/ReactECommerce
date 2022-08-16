@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Contador from "../ItemCount/ItemCount";
 
 function Item({ category, id, img, description, price, title }) {
   return (
@@ -12,10 +11,6 @@ function Item({ category, id, img, description, price, title }) {
         <Link to={`/Producto/${id}`} className="btn btn-primary" id={id}>
           Ver detalle
         </Link>
-        
-        <a href="#" className="btn btn-primary">
-          Agregar al <i className="bi bi-cart"></i>
-        </a>
 
       </div>
     </div>

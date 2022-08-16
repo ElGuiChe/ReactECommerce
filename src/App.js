@@ -7,6 +7,7 @@ import Contacto from "./components/Pages/Contacto/Contacto"
 import ProductDetailContainer from "./components/ProductDetailContainer/ProductDetailContainer";
 import Producto from "./components/Pages/Producto/Producto"
 import CategoryDetailContainer from "./components/Pages/CategoryDetailContainer/CategoryDetailContainer";
+import Carrito from "./components/Pages/Carrito/Carrito";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route parh="/Producto" element={<Producto/>}/>
           <Route path="/Producto/:id" element={<ProductDetailContainer/>}/>
           <Route path="/Categoria/:id" element={<CategoryDetailContainer/>}/>
+          <Route path="/Carrito" element={<Carrito/>}/>
           </Routes>
     </div>
   );

@@ -5,18 +5,22 @@ let estilo = {
   ancho: "width:100px",
 };
 
-const stock = 5;
-const Contador = () => {
+export default function Contador({onAddItemsToCart}) {
+  const stock = 5;
+
   const [contador, setContador] = useState(1);
 
   function restarAlContador() {
     contador === 0 ? console.log(contador) : setContador(contador - 1);
-    console.log(contador);
   }
 
   function sumarAlContador() {
     contador === stock ? console.log(contador) : setContador(contador + 1);
+  }
+
+  function onAdd() {
     console.log(contador);
+    onAddItemsToCart(contador);
   }
 
   return (
@@ -34,8 +38,9 @@ const Contador = () => {
           <i class="bi bi-plus"></i>
         </button>
       </div>
+      <button onClick={onAdd} type="button" class="btn btn-primary">
+        Agregar al carrito
+      </button>
     </div>
   );
-};
-
-export default Contador;
+}
