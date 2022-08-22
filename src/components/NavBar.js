@@ -1,6 +1,7 @@
 import React from "react";
 import Cart from "./CartWitget";
 import { NavLink, Link } from "react-router-dom";
+import CartWitget from "./CartWitget";
 
 const Nav = () => {
   return (
@@ -54,7 +55,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <Cart />
+        <CartWitget />
       </div>
     </nav>
   );
