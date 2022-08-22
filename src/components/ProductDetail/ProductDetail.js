@@ -1,18 +1,28 @@
 //import ProductDetailContainer from "../ProductDetailContainer/ProductDetailContainer";
 import Contador from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import {CartContext} from "../Context/CartContext"
 
-export default function ProductDetail ({ title , description, image}) {
+export default function ProductDetail ({ title , description, image, id, price}) {
+
+  //Uso del Context
+const {addCartItem} = useContext(CartContext)
+//
 
   //
   const [productAddedToCard, setProductAddedToCard] = useState(false);
   const onAdd = (quantityToAdd) => {
+    //Props enviadas al context
+    addCartItem({id, title, image, price, quantity: quantityToAdd})
+    //
     console.log(quantityToAdd);
     setProductAddedToCard(true);
 };
 
 //
+
+
   
   return (
       <div className="container">

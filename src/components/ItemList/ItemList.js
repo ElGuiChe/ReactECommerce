@@ -6,13 +6,13 @@ export default function ItemList({ productList }) {
       <div className="row">
         {productList.map((product) => {
           return (
-            <Item
-              category={product.category}
+            <Item {...product}
+              /*category={product.category}
               id={product.id}
               img={product.image}
               description={product.description}
               price={product.price}
-              title={product.title}
+              title={product.title}*/
             />
           );
         })}

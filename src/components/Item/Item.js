@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Item({ category, id, img, description, price, title }) {
+function Item({ category, id, image, description, price, title }) {
   return (
     <div className="card" Style="width: 18rem;">
-      <img src={img} className="card-img-top" id={id} alt="..." />
+      <img src={image} className="card-img-top" id={id} alt="..." />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         

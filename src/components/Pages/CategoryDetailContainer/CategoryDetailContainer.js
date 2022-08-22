@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../../ItemList/ItemList";
 import { useParams } from 'react-router-dom'
 
-function ItemListContainer() {
+export default function ItemListContainer() {
 
   const [products, setProducts] = useState([]);
 
@@ -22,7 +22,7 @@ function ItemListContainer() {
     }
 
     callProducts();
-  }, [products]);
+  }, [id]);
 
   return (
     <div className="container">
@@ -33,4 +33,3 @@ function ItemListContainer() {
   );
 }
 
-export default ItemListContainer;

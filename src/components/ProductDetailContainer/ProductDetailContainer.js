@@ -1,14 +1,14 @@
 import { useParams } from 'react-router-dom'
-import { useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import ProductDetail from '../ProductDetail/ProductDetail';
 
 export default function ProductDetailContainer() {
 
 //
-   const [user, setUser] = useState({});
+   const [product, setProduct] = useState({});
 //
     const { id } = useParams();
-    console.log(id)
+    //console.log(id)
 
     useEffect(() => {
       async function callDetail() {
@@ -16,10 +16,10 @@ export default function ProductDetailContainer() {
           let response = await fetch(`https://fakestoreapi.com/products/${id}`);
           let data = await response.json();
           //
-          setUser(data)
+          setProduct(data)
           //
 
-          console.log(data)
+          //console.log(data)
         } catch (error) {
           console.log(error);
         }
@@ -31,7 +31,7 @@ export default function ProductDetailContainer() {
 
       //ultimo
       <div>
-        <ProductDetail {...user} />
+        <ProductDetail {...product} />
       </div>
       //ultimo
     );

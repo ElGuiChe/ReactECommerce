@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
+import { CartContext } from "../Context/CartContext";
 
 let estilo = {
   ancho: "width:100px",
@@ -21,7 +22,12 @@ export default function Contador({onAddItemsToCart}) {
   function onAdd() {
     console.log(contador);
     onAddItemsToCart(contador);
+    addToCart();
   }
+
+  //Funciones del CartContext
+
+  const {addToCart} = useContext(CartContext);
 
   return (
     <div class="container">
@@ -38,7 +44,10 @@ export default function Contador({onAddItemsToCart}) {
           <i class="bi bi-plus"></i>
         </button>
       </div>
-      <button onClick={onAdd} type="button" class="btn btn-primary">
+      <button onClick={()=>{
+        onAdd();
+        }}
+        type="button" class="btn btn-primary">
         Agregar al carrito
       </button>
     </div>

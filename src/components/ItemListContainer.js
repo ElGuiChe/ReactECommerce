@@ -9,7 +9,7 @@ function ItemListContainer() {
       try {
         let response = await fetch("https://fakestoreapi.com/products");
         let data = await response.json();
-        console.log(data);
+        //console.log(data);
         setProducts(data);
       } catch (error) {
         console.log(error);
