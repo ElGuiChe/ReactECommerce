@@ -10,7 +10,9 @@ import CategoryDetailContainer from "./components/Pages/CategoryDetailContainer/
 import Carrito from "./components/Pages/Carrito/Carrito";
 import CartCustomContext from "./components/Context/CartContext";
 
+
 function App() {
+
   return (
     <div className="App">
         <CartCustomContext>

@@ -31,10 +31,10 @@ const Nav = () => {
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to="/">Todo</Link></li>
             <li><hr class="dropdown-divider"/></li>
-            <li><Link class="dropdown-item" id="electronics" to="/Categoria/electronics">Electrónica</Link></li>
-            <li><Link class="dropdown-item" id="jewelery" to="/Categoria/jewelery">Joyería</Link></li>
-            <li><Link class="dropdown-item" id="men's clothing" to="/Categoria/men's clothing">Ropa de Hombre</Link></li>
-            <li><Link class="dropdown-item" id="women's clothing" to="/Categoria/women's clothing">Ropa de Mujer</Link></li>
+            <li><Link class="dropdown-item" id="electronics" to="/Categoria/zfnCtAQ2M3qekzJgnSrR">Electrónica</Link></li>
+            <li><Link class="dropdown-item" id="jewelery" to="/Categoria/5zydxnjix18Ejqe8fOCl">Joyería</Link></li>
+            <li><Link class="dropdown-item" id="men's clothing" to="/Categoria/fkkmgoLM5fT52QEXU4Kd">Ropa de Hombre</Link></li>
+            <li><Link class="dropdown-item" id="women's clothing" to="/Categoria/Mi08dEquSzG6yGiWIkWW">Ropa de Mujer</Link></li>
           </ul>
         </li>
 
