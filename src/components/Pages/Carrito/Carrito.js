@@ -7,12 +7,10 @@ const estilo = {
 };
 
 export default function Carrito() {
-  const { removeCartItem, clearCart, cart } = useContext(CartContext);
+  const { removeCartItem, clearCart, cart, totalPrice, createOrder } = useContext(CartContext);
   console.log(cart);
 
-  const totalPrice = cart
-    .map((item) => item.price)
-    .reduce((prev, curr) => prev + curr, 0);
+
 
   if (cart.length == 0) {
     return (
@@ -50,6 +48,14 @@ export default function Carrito() {
           class="btn btn-primary"
         >
           Eliminar Todo
+        </button>
+
+        <button
+          onClick={() => createOrder()}
+          type="button"
+          class="btn btn-primary"
+        >
+          Terminar Compra
         </button>
       </div>
     );
