@@ -64,6 +64,7 @@ export default function CartCustomContext({ children }) {
   .map((item) => item.price)
   .reduce((prev, curr) => prev + curr, 0);
 
+
 //Crea el objeto para subirlo a la DB
   let order = {}
   const createOrder = () => {
@@ -79,6 +80,7 @@ export default function CartCustomContext({ children }) {
         email: "LaCumbanchaVolante@gmail.com"
       },
       items:itemForOrder,
+      date: new Date().toDateString(),
       total:totalPrice
     }
 //
