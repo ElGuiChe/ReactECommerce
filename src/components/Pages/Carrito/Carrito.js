@@ -80,7 +80,7 @@ export default function Carrito() {
   if (cart.length === 0) {
     return (
       <div className="container">
-        <h1 class="font-semibold text-2xl">Tu carrito está vacio PRUEBA DE CAMBIOS EN PRODUCTIVO</h1>
+        <h1 class="font-semibold text-2xl">Tu carrito está vacio</h1>
         <Link class="font-semibold text-indigo-600 text-sm mt-10" to="/">
           Vuelve a la tienda
         </Link>
