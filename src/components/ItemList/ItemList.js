@@ -2,20 +2,15 @@ import Item from "../Item/Item";
 
 export default function ItemList({ productList }) {
   return (
-    <div className="container">
-      <div className="row">
-        {productList.map((product) => {
-          return (
-            <Item {...product}
-              /*category={product.category}
-              id={product.id}
-              img={product.image}
-              description={product.description}
-              price={product.price}
-              title={product.title}*/
-            />
-          );
-        })}
+    <div className="bg-white">
+      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 className="sr-only">Products</h2>
+
+        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {productList.map((product) => {
+            return <Item {...product} key={product.id} />;
+          })}
+        </div>
       </div>
     </div>
   );

@@ -27,41 +27,18 @@ function ItemListContainer() {
     const db = getFirestore (app)
     const colRef = collection (db, "productos")
     getDocs (colRef).then((snapshot)=>{
-      console.log("snapshot.docs ",snapshot.docs)
       const productosArray = snapshot.docs.map((rawDoc) =>{
         return {
           id: rawDoc.id,
           ...rawDoc.data()
         }
       })
-      console.log(productosArray)
       setProducts(productosArray)
     }, (error)=>{
       console.log("error al intentar llamar la base de datos",error)
     });
     
       }, [])
-    
-
-
-
-
-/*  useEffect(() => {
-    async function callProducts() {
-      try {
-        let response = await fetch("https://fakestoreapi.com/products");
-        let data = await response.json();
-        //console.log(data);
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    callProducts();
-  }, []);
-
-  */
 
   return (
     <div className="container">

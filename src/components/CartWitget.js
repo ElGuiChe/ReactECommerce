@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../components/Context/CartContext";
 
@@ -13,16 +13,15 @@ const CartWitget = () => {
 
   let hide = "hidden";
 
-  if (cart.length == 0) {
+  if (cart.length === 0) {
     console.log(hide);
   } else {
     hide = " ";
-    console.log(hide);
   }
 
   return (
-    <Link to="/Carrito" class="btn btn-dark position-relative">
-      <i class="bi bi-cart2"></i>
+    <Link to="/Carrito" className="btn btn-dark position-relative">
+      <i className="bi bi-cart2"></i>
       <span
         className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
         Style={`visibility: ${hide}`}

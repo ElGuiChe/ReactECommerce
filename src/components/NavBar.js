@@ -1,17 +1,17 @@
 import React from "react";
-import Cart from "./CartWitget";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CartWitget from "./CartWitget";
 
 const Nav = () => {
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Navbar
-        </a>
+    <nav className="navbar navbar-expand-lg bg-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          LOGO
+        </Link>
+
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -19,40 +19,24 @@ const Nav = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
 
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Productos
-          </a>
-          <ul class="dropdown-menu">
-            <li><Link class="dropdown-item" to="/">Todo</Link></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><Link class="dropdown-item" id="electronics" to="/Categoria/zfnCtAQ2M3qekzJgnSrR">Electrónica</Link></li>
-            <li><Link class="dropdown-item" id="jewelery" to="/Categoria/5zydxnjix18Ejqe8fOCl">Joyería</Link></li>
-            <li><Link class="dropdown-item" id="men's clothing" to="/Categoria/fkkmgoLM5fT52QEXU4Kd">Ropa de Hombre</Link></li>
-            <li><Link class="dropdown-item" id="women's clothing" to="/Categoria/Mi08dEquSzG6yGiWIkWW">Ropa de Mujer</Link></li>
+          </Link>
+          <ul className="dropdown-menu">
+            <li><Link className="dropdown-item" to="/">Todo</Link></li>
+            <li><hr className="dropdown-divider"/></li>
+            <li><Link className="dropdown-item" id="electronics" to="/Categoria/zfnCtAQ2M3qekzJgnSrR">Electrónica</Link></li>
+            <li><Link className="dropdown-item" id="jewelery" to="/Categoria/5zydxnjix18Ejqe8fOCl">Joyería</Link></li>
+            <li><Link className="dropdown-item" id="men's clothing" to="/Categoria/fkkmgoLM5fT52QEXU4Kd">Ropa de Hombre</Link></li>
+            <li><Link className="dropdown-item" id="women's clothing" to="/Categoria/Mi08dEquSzG6yGiWIkWW">Ropa de Mujer</Link></li>
           </ul>
         </li>
-
-            <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/">
-                Home
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/Tiendas">
-                Tiendas
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/Contacto">
-                Contacto
-              </Link>
-            </li>
           </ul>
         </div>
         <CartWitget />

@@ -23,7 +23,6 @@ export default function ProductDetailContainer() {
   const [product, setProduct] = useState({});
   //
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     // Initialize Firebase
@@ -33,10 +32,6 @@ export default function ProductDetailContainer() {
     const itemRef = doc(db, "productos", id);
     getDoc(itemRef).then(
       (snapshot) => {
-        //if (snapshot.exist()){
-        console.log({ id: snapshot.id, ...snapshot.data() });
-        //}
-        //, ...snapshot.data
         setProduct({ id: snapshot.id, ...snapshot.data() });
       },
       (error) => {
@@ -45,28 +40,9 @@ export default function ProductDetailContainer() {
     );
   }, [id]);
 
-  /*useEffect(() => {
-      async function callDetail() {
-        try {
-          let response = await fetch(`https://fakestoreapi.com/products/${id}`);
-          let data = await response.json();
-          //
-          setProduct(data)
-          //
-
-          //console.log(data)
-        } catch (error) {
-          console.log(error);
-        }
-      }
-        callDetail();
-    }, [id]);*/
-
   return (
-    //ultimo
     <div>
       <ProductDetail {...product} />
     </div>
-    //ultimo
   );
 }

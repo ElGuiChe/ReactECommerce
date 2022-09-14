@@ -6,50 +6,55 @@ let estilo = {
   ancho: "width:100px",
 };
 
-export default function Contador({onAddItemsToCart}) {
-  const stock = 5;
-
+export default function Contador({ onAddItemsToCart }) {
   const [contador, setContador] = useState(1);
 
   function restarAlContador() {
-    contador === 0 ? console.log(contador) : setContador(contador - 1);
+    contador === 1 ? console.log(contador) : setContador(contador - 1);
   }
 
   function sumarAlContador() {
-    contador === stock ? console.log(contador) : setContador(contador + 1);
+    setContador(contador + 1);
   }
 
   function onAdd() {
-    console.log(contador);
     onAddItemsToCart(contador);
     addToCart();
   }
 
   //Funciones del CartContext
 
-  const {addToCart} = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   return (
-    <div class="container">
-      <div class="btn-group" role="group" aria-label="Basic example">
+    <>
+      <div className="btn-group" role="group" aria-label="Basic example">
         <button
           onClick={restarAlContador}
           type="button"
-          class="btn btn-primary"
+          className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
         >
-          <i class="bi bi-dash"></i>
+          <i className="bi bi-dash"></i>
         </button>
         <p Style={estilo.ancho}>{contador}</p>
-        <button onClick={sumarAlContador} type="button" class="btn btn-primary">
-          <i class="bi bi-plus"></i>
+        <button
+          onClick={sumarAlContador}
+          type="button"
+          className="ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
+        >
+          <i className="bi bi-plus"></i>
         </button>
       </div>
-      <button onClick={()=>{
-        onAdd();
+
+      <button
+        onClick={() => {
+          onAdd();
         }}
-        type="button" class="btn btn-primary">
+        type="button"
+        className=" ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
+      >
         Agregar al carrito
       </button>
-    </div>
+    </>
   );
 }

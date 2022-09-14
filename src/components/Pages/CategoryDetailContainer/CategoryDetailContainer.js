@@ -42,14 +42,12 @@ export default function ItemListContainer() {
     //
     getDocs(consulta).then(
       (snapshot) => {
-        console.log(snapshot.docs);
         const productosArray = snapshot.docs.map((rawDoc) => {
           return {
             id: rawDoc.id,
             ...rawDoc.data(),
           };
         });
-        console.log(productosArray);
         setProducts(productosArray);
       },
       (error) => {
@@ -57,21 +55,6 @@ export default function ItemListContainer() {
       }
     );
   }, [id]);
-
-  /*useEffect(() => {
-    async function callProducts() {
-      try {
-        let response = await fetch(`https://fakestoreapi.com/products/category/${id}`);
-        let data = await response.json();
-        console.log(data);
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    callProducts();
-  }, [id]);*/
 
   return (
     <div className="container">
