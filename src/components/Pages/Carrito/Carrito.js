@@ -74,70 +74,71 @@ export default function Carrito() {
       setValidador(true);
     } else {
       alert("Los correos ingresados deben coincidir");
+      setValidador(false)
     }
   };
 
   if (cart.length === 0) {
     return (
       <div className="container">
-        <h1 class="font-semibold text-2xl">Tu carrito está vacio</h1>
-        <Link class="font-semibold text-indigo-600 text-sm mt-10" to="/">
+        <h1 className="font-semibold text-2xl">Tu carrito está vacio</h1>
+        <Link className="font-semibold text-indigo-600 text-sm mt-10" to="/">
           Vuelve a la tienda
         </Link>
       </div>
     );
   } else {
     return (
-      <body class="bg-gray-100">
-        <div class="container mx-auto mt-10">
-          <div class="flex shadow-md my-10">
-            <div class="w-3/4 bg-white px-10 py-10">
-              <div class="flex justify-between border-b pb-8">
-                <h1 class="font-semibold text-2xl">Carrito de Compra</h1>
+      <div className="bg-gray-100">
+        <div className="container mx-auto mt-10">
+          <div className="flex shadow-md my-10">
+            <div className="w-3/4 bg-white px-10 py-10">
+              <div className="flex justify-between border-b pb-8">
+                <h1 className="font-semibold text-2xl">Carrito de Compra</h1>
               </div>
-              <div class="flex mt-10 mb-5">
-                <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">
+              <div className="flex mt-10 mb-5">
+                <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
                   Producto
                 </h3>
-                <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
                   Cantidad
                 </h3>
-                <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
                   Precio
                 </h3>
-                <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
+                <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">
                   Total
                 </h3>
               </div>
               {cart.map((item) => {
                 return (
-                  <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-                    <div class="flex w-2/5">
-                      <div class="w-20">
-                        <img class="h-24" src={item.image} alt="" />
+                  <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                    <div className="flex w-2/5">
+                      <div className="w-20">
+                        <img className="h-24" src={item.image} alt="" />
                       </div>
-                      <div class="flex flex-col justify-between ml-4 flex-grow">
-                        <span class="font-bold text-sm">{item.title}</span>
+                      <div className="flex flex-col justify-between ml-4 flex-grow">
+                        <span className="font-bold text-sm">{item.title}</span>
                         <button
                           onClick={() => removeCartItem(item.id)}
                           type="button"
-                          class="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                          className="font-semibold hover:text-red-500 text-gray-500 text-xs"
                         >
                           Eliminar
                         </button>
                       </div>
                     </div>
-                    <div class="flex justify-center w-1/5">
+                    <div className="flex justify-center w-1/5">
                       <input
-                        class="mx-2 border text-center w-8"
+                        className="mx-2 border text-center w-8"
                         type="text"
                         value={item.quantity}
                       />
                     </div>
-                    <span class="text-center w-1/5 font-semibold text-sm">
+                    <span className="text-center w-1/5 font-semibold text-sm">
                       ${item.price}
                     </span>
-                    <span class="text-center w-1/5 font-semibold text-sm">
+                    <span className="text-center w-1/5 font-semibold text-sm">
                       ${(item.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
@@ -170,14 +171,15 @@ export default function Carrito() {
                     nombre = ev.target.nombre.value;
                     apellido = ev.target.apellido.value;
                     email = ev.target.email.value;
-                    emailValidacion = ev.target.email.value;
+                    emailValidacion = ev.target.emailValidacion.value;
                     telefono = ev.target.telefono.value;
+                    validacion();
                   }}
                 >
                   <fieldset>
                     <div className="row">
                       <div className="mb-3 col-md-6">
-                        <label for="nombre" class="form-label">
+                        <label htmlFor="nombre" className="form-label">
                           Nombre
                         </label>
                         <input
@@ -190,7 +192,7 @@ export default function Carrito() {
                         />
                       </div>
                       <div className="mb-3 col-md-6">
-                        <label for="apellido" class="form-label">
+                        <label htmlFor="apellido" className="form-label">
                           Apellido
                         </label>
                         <input
@@ -203,7 +205,7 @@ export default function Carrito() {
                         />
                       </div>
                       <div className="mb-3 col-md-12">
-                        <label for="email" class="form-label">
+                        <label htmlFor="email" className="form-label">
                           E-mail*
                         </label>
                         <input
@@ -216,7 +218,7 @@ export default function Carrito() {
                         />
                       </div>
                       <div className="mb-3 col-md-12">
-                        <label for="email" class="form-label">
+                        <label htmlFor="emailValidacion" className="form-label">
                           Repite tu e-mail*
                         </label>
                         <input
@@ -228,8 +230,8 @@ export default function Carrito() {
                           placeholder="pedroperez@gmail.com"
                         />
                       </div>
-                      <div class="mb-3 col-md-12">
-                        <label for="telefono" class="form-label">
+                      <div className="mb-3 col-md-12">
+                        <label htmlFor="telefono" className="form-label">
                           Teléfono
                         </label>
                         <input
@@ -252,7 +254,7 @@ export default function Carrito() {
                       </button>
                     ) : (
                       <button
-                        onClick={() => validacion()}
+                        onClick=""
                         type="submit"
                         className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 my-1 text-sm text-white uppercase w-full"
                       >
@@ -280,7 +282,7 @@ export default function Carrito() {
             </div>
           </div>
         </div>
-      </body>
+      </div>
     );
   }
 }
